@@ -19,3 +19,16 @@ rm -rf miniconda3/miniconda.sh
 
 miniconda3/bin/conda init bash
 ```
+
+# Label Studio
+```shell
+docker run -it -p 8080:8080 -v $(pwd)/mydata:/label-studio/data heartexlabs/label-studio:latest
+```
+
+```shell
+python3 -m venv env
+source env/bin/activate
+sudo apt install python3.9-dev
+python -m pip install label-studio
+```
+
