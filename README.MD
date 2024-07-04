@@ -32,3 +32,10 @@ sudo apt install python3.9-dev
 python -m pip install label-studio
 ```
 
+# ubuntu 电源管理
+
+```shell
+sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+echo -1 | sudo tee /sys/bus/usb/devices/*/power/autosuspend
+
+```
