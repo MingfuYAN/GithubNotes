@@ -39,3 +39,11 @@ sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.ta
 echo -1 | sudo tee /sys/bus/usb/devices/*/power/autosuspend
 
 ```
+
+```shell
+# 修改为图形界面
+systemctl set-default graphical.target
+
+# 修改为命令行界面
+sudo systemctl set-default multi-user.target
+```
