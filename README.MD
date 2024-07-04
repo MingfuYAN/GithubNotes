@@ -47,3 +47,20 @@ systemctl set-default graphical.target
 # 修改为命令行界面
 sudo systemctl set-default multi-user.target
 ```
+
+# zsh
+```shell
+sudo apt install zsh autojump -y
+# 设成默认shell
+chsh -s $(which zsh)
+# 安装 oh my zsh
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# 下载插件
+git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+ZSH_THEME="junkfood"
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting autojump)
+/home/mfyan/miniconda3/bin/conda init zsh
+```
