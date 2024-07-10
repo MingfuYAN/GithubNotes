@@ -69,3 +69,44 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting autojump)
 export PATH="/usr/local/cuda-11.7/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda-11.7/lib64:$LD_LIBRARY_PATH"
 ```
+
+# VS Code Debug
+`launch.json`
+```json
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+		    // 可以配置多个debug配置
+        {
+            "name": "Python 调试程序: 当前文件",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            // "module": "scripts.pose2vid", // 如果是module
+            "console": "integratedTerminal",
+            // 如果需要跳进库里，把这个设置为false
+            "justMyCode": true,
+            // 改：虚拟环境地址
+            "python": "/data0/mfyan/miniconda3/envs/vidtome/bin/python", 
+            // 改：运行参数
+            "args": [
+            //    "--config", "configs/tea-pour.yaml",
+            ],
+            // 改：环境变量
+            "env": {
+                "ALL_PROXY": "",
+                "all_proxy": "",
+                "CUDA_VISIBLE_DEVICES": "0",
+                "PYTHONUNBUFFERED": "1",
+                "PYTHONWARNINGS": "ignore::FutureWarning",
+            }
+            // 设置程序根路径，如果需要
+		        // "cwd": "/home/mfyan/PhotoMaker/3DDFA/",
+        },
+    ]
+}
+
+```
