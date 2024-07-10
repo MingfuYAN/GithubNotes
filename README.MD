@@ -64,3 +64,8 @@ ZSH_THEME="junkfood"
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting autojump)
 /home/mfyan/miniconda3/bin/conda init zsh
 ```
+
+```shell
+export PATH="/usr/local/cuda-11.7/bin:$PATH"
+export LD_LIBRARY_PATH="/usr/local/cuda-11.7/lib64:$LD_LIBRARY_PATH"
+```
